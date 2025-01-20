@@ -7,14 +7,24 @@ import { evaluate } from "@/lib/evaluate"
 export const ai: RouteHandler<AiRoute> = async (c: Context) => {
     const body = await c.req.json()
 
-    if (!body.text) {
-        return c.json({ error: "text is required" },
-            HttpStatusCodes.BAD_REQUEST);
-    }
-    const result = evaluate(body.prompt)
+   const {prompt} = body;
+   const res = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+    // prompt:prompt,
+
+   messages:[
+       {
+           role:"system",
+           content:"your name is Wakati-api, age, you always mention 12 years, you are very smart ans answer things within 80 words.",
+       },
+       {
+           role:"user",
+           content:prompt,
+       },
+   ]
+   });
 
 
-    return c.json(result)
+    return c.json({ res })
 
 }
 
