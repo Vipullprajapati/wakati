@@ -5,6 +5,7 @@ export const analyze = createRoute({
   path: "/analyze",
   description: "analyze data or text provided in the request.",
   method: "post",
+  tags: ["Analyze"],
   request: {
     body: {
       content: {
