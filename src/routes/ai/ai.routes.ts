@@ -4,6 +4,7 @@ import * as HttpStatusCodes from "stoker/http-status-codes";
 export const ai = createRoute({
   path: "/ai",
   method: "post",
+  description: "enables advanced AI-driven analysis and processing of data such as text classification, sentiment analysis and providing powerful insights and automation for your data.",
   request: {
     body: {
       content: {

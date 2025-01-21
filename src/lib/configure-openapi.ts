@@ -6,8 +6,10 @@ export default function configureOpenAPI(app: OpenAPIHono) {
     app.doc("/schema", {
         openapi: "3.0.0",
         info: {
-            title: "Wakati API",
-            description: "Text Intelligence Platform",
+            title: `Wakati API`,
+            description: `# Text Intelligence Platform
+            \nWakati API is an advanced text intelligence platform designed to analyze and calculate text scores with AI modules.\n`,
+    
             version: packageJSON.version,
         },
     })
