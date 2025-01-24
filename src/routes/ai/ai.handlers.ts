@@ -8,14 +8,16 @@ export const ai: RouteHandler<AiRoute> = async (c: Context) => {
     const body = await c.req.json()
 
    const {prompt} = body;
-   const res = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+   const res = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct-fast", {
     // prompt:prompt,
 
    messages:[
-       {
-           role:"system",
-           content:"your name is Wakati-api, age, you always mention 12 years, you are very smart ans answer things within 80 words.",
-       },
+    {
+        "role": "system",
+        "content": "I'm are Wakati, model 02, an advanced AI assistant. I respond only when asked a direct question and always provide short, crisp, and accurate answers."
+     },
+     
+     
        {
            role:"user",
            content:prompt,
