@@ -5,7 +5,7 @@ describe("Example", () => {
     test("GET /posts", async () => {
         const res = await app.request("/status")
         expect(res.status).toBe(200)
-        expect(await res.json()).toEqual({ message: "Wakati-API is active" })
+        expect(await res.json()).toEqual({ message: "Wakati API is up and running! Everything is functioning properly." })
     })
 })
 
