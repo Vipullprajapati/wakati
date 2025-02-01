@@ -13,7 +13,7 @@ export const analyze: RouteHandler<AnalyzeRoute> = async (c: Context) => {
     }
     const result = evaluate(body.text)
 
-    const sentiment = await c.env.AI.run("@cf/huggingface/distilbert-sst-2-int8", {
+    const sentiment = await c.env.AI.run("@cf/deepseek-ai/deepseek-r1-distill-qwen-32b", {
         text: body.text,
     })
 

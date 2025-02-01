@@ -8,7 +8,7 @@ export const ai: RouteHandler<AiRoute> = async (c: Context) => {
     const body = await c.req.json()
 
    const {prompt} = body;
-   const res = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct-fast", {
+   const res = await c.env.AI.run("@cf/deepseek-ai/deepseek-r1-distill-qwen-32b", {
     // prompt:prompt,
 
    messages:[
