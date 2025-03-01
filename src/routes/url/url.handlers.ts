@@ -16,7 +16,7 @@ export const url: RouteHandler<AnalyzeRoute> = async (c: Context) => {
 
     const result = evaluate(p)
 
-    const response = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+    const response = await c.env.AI.run("@cf/deepseek-ai/deepseek-r1-distill-qwen-32b", {
         // prompt: prompt,
     
         messages: [
